@@ -11,7 +11,7 @@ int i;
 for (i = 97; i < 123; i++)
 {
 /* if condition func */
-if (i != 101 && i != 123)
+if (i != 101 && i != 113)
 putchar(i);
 }
 putchar('\n');
