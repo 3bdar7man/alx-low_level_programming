@@ -1,17 +1,17 @@
 #include <stdio.h>
 
-/* betty style doc for function main goes there */
-/*
-*main func - short description */ int main(void)
+/**
+ * main - excuted program
+ * Return: success, the program executed successfully
+ */
+int main(void)
 {
-/* i var loop */
 int i;
 
-/* putchar loop func */
 for (i = 97; i != 91; i++)
 {
 putchar(i);
-/* convert loop to capital chars */
+/* convert loop for capital chars */
 if (i == 122)
 i = 64;
 }
