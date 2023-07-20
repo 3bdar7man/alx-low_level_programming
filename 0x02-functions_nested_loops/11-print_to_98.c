@@ -17,7 +17,7 @@ printf("\n");
 nLess:
 for (i = n + 1; n <= 98; i++)
 {
-printf", %d", i);
+printf(", %d", i);
 }
 printf("\n");
 return;
