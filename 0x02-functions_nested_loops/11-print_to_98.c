@@ -11,6 +11,6 @@ printf("%d", n);
 if (n != 98)
 for (i = n; n <= 98; i++) 
 {
-printf(", %d", i)
+printf(", %d", i);
 }
 }
