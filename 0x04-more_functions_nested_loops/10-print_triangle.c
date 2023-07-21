@@ -12,13 +12,13 @@ for (i = 0; i < size; i++)
 {
 for (j = i + 1; j < size; j++)
 {
-_putchar(" ");
+_putchar(' ');
 }
 for (k = size - i - 1; k < size; k++)
 {
-_putchar("#");
+_putchar('#');
 }
-_putchar("\n");
+_putchar('\n');
 }
 
 }
