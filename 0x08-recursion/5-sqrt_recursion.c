@@ -9,5 +9,18 @@
  */
 int _sqrt_recursion(int n)
 {
-return ((int) sqrt(n) == sqrt(n) ? sqrt(n) : -1);
+int i, rs;
+
+for (i = 1; i <= n; i++)
+{
+if (n / i == i)
+{
+rs = i;
+return (rs);
+} else {
+rs = -1;
+}
+}
+
+return (rs);
 }
