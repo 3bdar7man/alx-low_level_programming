@@ -9,5 +9,5 @@
  */
 int _sqrt_recursion(int n)
 {
-return (sqrt(n) * 10 % 10 == 0 ? sqrt(n) : -1);
+return ((int) sqrt(n) == sqrt(n) ? sqrt(n) : -1);
 }
