@@ -9,18 +9,21 @@
  */
 int is_prime_number(int n)
 {
-int i;
-int a[] = allocal(n - 1);
+int i,rt;
+
+if(n < 2)
+return (0);
 
 for (i = 2; i < n; i++)
 {
-a[i-2] = n % i == 0 ? 1 : 0;
-return (rt);
+if (n / i % 10 == 0)
+{
+rt = 1;
+return (1);
+} else {
+rt = 0;
+}
 }
 
-for (i = 0; i < n; i++)
-{
-if (a[i] == 0)
-return (0);
-return (1);
+return (rt);
 }
