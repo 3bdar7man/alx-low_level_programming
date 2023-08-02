@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <string.h>
+#include "main.h"
 
 /**
  * _print_rev_recursion - some func
@@ -7,10 +7,10 @@
  */
 void _print_rev_recursion(char *s)
 {
-int i;
+size_t i;
 
 for (i = 0; i < strlen(s); i++)
 {
-putchar(strlen(s) - 1 - i);
+_putchar(s[strlen(s) - 1 - i]);
 }
 }
