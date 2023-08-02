@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
 
 /**
  * _pow_recursion - like pow
@@ -11,5 +9,12 @@
  */
 int _pow_recursion(int x, int y)
 {
-return (pow(x, y));
+int i, rs = 0;
+
+if (y < 0)
+return (-1);
+
+for (i = 1; i < y; i++)
+rs += x * x;
+return (rs);
 }
