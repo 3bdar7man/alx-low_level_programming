@@ -7,8 +7,10 @@
 char *Str;
 
 /**
- * _func - some func
- * @_arg: some arg
+ * argstostr - some func
+ * @ac: some arg
+ * @av: some arg
+ *
  * Return: the wanted value
  */
 char *argstostr(int ac, char **av)
