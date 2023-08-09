@@ -1,9 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <limits.h>
-
-
-/* some variable */
-int *a;
 
 /**
  * alloc_grid - some func
@@ -14,16 +11,30 @@ int *a;
  */
 int **alloc_grid(int width, int height)
 {
-	int i;
-	a = malloc(sizeof(int) * width * height);
+	int i, j;
+	int **aP;
 
-	if (width < 1)
-		return (NULL);
-	if (height < 1)
+	if (width < 1 || height < 1)
 		return (NULL);
 
-	for (i =0; i < width * height; i++)
-		*(a + i) = 0;
+	aP = malloc(sizeof(int *) * height);
+	if (aP == NULL)
+	{
+		printf("malloc error");
+		return (NULL);
+	}
 
-	return (&a);
+	for (i = 0; i < height; i++)
+	{
+		aP[i] = malloc(sizeof(int) * width);
+		if (aP[i] == NULL)
+		{
+			printf("malloc error");
+			return (NULL);
+		}
+		for (j = 0; j < width; j++)
+			aP[i][j] = 0;
+	}
+
+	return (aP);
 }
