@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include <limits.h>
 
 /**
@@ -12,20 +13,42 @@
 char *str_concat(char *s1, char *s2)
 {
 	int i;
-	char *Str;
+	char *Str, *Str1, *Str2;
 
-	if (s1 = NULL)
-		s1 = '';
-	if (s2 = NULL)
-		s2 = '';
+	Str1 = malloc(sizeof(char) * strlen(s1));
+	if (Str1 == NULL)
+	{
+		printf("malloc error");
+		return (NULL);
+	}
+	Str2 = malloc(sizeof(char) * strlen(s2));
+	if (Str2 == NULL)
+	{
+		printf("malloc error");
+		return (NULL);
+	}
 
-	Str = malloc(sizeof(char) * (strlen(s1) + strlen(2) + 1))
+	if (s1 == NULL)
+		Str1 = "";
+	else
+		strcpy(Str1, s1);
+	if (s2 == NULL)
+		Str2 = "";
+	else
+		strcpy(Str2, s2);
 
-	for (i = 0; i < strlen(s1); i++)
-		Str[i] = s1[i];
-	for (i = 0; i < strlen(s2); i++)
-		Str[i + strlen(s1)] = s2[i];
-	Str[i] = '\0';
+	Str = malloc(sizeof(char) * (strlen(Str1) + strlen(Str2) + 1));
+	if (Str == NULL)
+	{
+		printf("malloc error");
+		return (NULL);
+	}
+
+	for (i = 0; i < (int) strlen(Str1); i++)
+		Str[i] = Str1[i];
+	for (i = 0; i < (int) strlen(Str2); i++)
+		Str[i + strlen(Str1)] = Str2[i];
+	Str[(strlen(Str1) + strlen(Str2) + 1)] = '\0';
 
 	return (Str);
 }
