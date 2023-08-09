@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include <limits.h>
 
 /* some variable */
-char *strP;
+char *Str;
 
 /**
  * _func - some func
@@ -17,7 +18,14 @@ char *argstostr(int ac, char **av)
 	if (ac < 1 || av == NULL)
 		return (NULL);
 
+	Str = malloc(sizeof(char) * 99);
+	if (Str == NULL)
+	{
+		printf("malloc error");
+		return (NULL);
+	}
+	
 	for (i = 1; i < ac; i++)
-		strP = strcat(strP, *(av + i));
-	return (strP);
+		Str = strcat(Str, *(av + i));
+	return (Str);
 }
