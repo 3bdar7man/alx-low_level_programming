@@ -14,18 +14,18 @@
 int *array_range(int min, int max)
 {
 	int i;
-	void *Ptr;
-	
-	if(min > max)
-		return(NULL);
+	int *Ptr;
+
+	if (min > max)
+		return (NULL);
 
 	Ptr = malloc(sizeof(int) * (max - min + 1));
-	if (Prt == NULL)
+	if (Ptr == NULL)
 	{
 		printf("malloc error");
-		exit(98);
+		return (NULL);
 	}
-	
+
 	for (i = 0; i < (max - min + 1); i++)
 		Ptr[i] = min + i;
 

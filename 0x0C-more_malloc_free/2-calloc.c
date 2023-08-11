@@ -10,7 +10,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *Ptr = calloc(nmeb, size);
+	void *Ptr = calloc(nmemb, size);
 
 	return (Ptr);
 }
