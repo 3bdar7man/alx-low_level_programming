@@ -2,6 +2,7 @@
 
 /**
  * init_dog - some func
+ * @d: some arg
  * @name: some arg
  * @age: some arg
  * @owner: some arg

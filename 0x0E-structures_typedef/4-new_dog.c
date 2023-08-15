@@ -6,10 +6,13 @@
  * @name: some arg
  * @age: some arg
  * @owner: some arg
+ *
+ * Return: the wanted value
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *Dog = malloc(sizeof(dog_t));
+
 	if (Dog == (void *)0)
 		return ((void *)0);
 
