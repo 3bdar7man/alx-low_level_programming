@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdlib.h>
 
 /**
  * new_dog - some func
@@ -8,7 +9,10 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *Dog;
+	dog_t *Dog = malloc(sizeof(dog_t));
+	if (Dog == (void *)0)
+		return ((void *)0);
+
 	Dog->name = name;
 	Dog->age = age;
 	Dog->owner = owner;
