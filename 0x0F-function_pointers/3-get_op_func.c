@@ -1,3 +1,4 @@
+#include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -11,6 +12,11 @@
  */
 int main(int argc, char **argv)
 {
+	char *Op = argv[2], *N1Str = argv[1], *N2Str = argv[3];
+	int N1 = atoi(N1Str), N2 =atoi(N2Str);
+	printf("%d\n", (get_op_func(Op))(N1, N2));
+	return (0);
+
 	if (argc < 2)
 	{
 		printf("Error\n");
