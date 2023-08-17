@@ -12,6 +12,7 @@
  */
 int main(int argc, char **argv)
 {
+	printf("%d %s %s %s %s\n", argc, argv[0], argv[1], argv[2], argv[3]);
 	char *Op = argv[2], *N1Str = argv[1], *N2Str = argv[3];
 	int N1 = atoi(N1Str), N2 =atoi(N2Str);
 	printf("%d\n", (get_op_func(Op))(N1, N2));
