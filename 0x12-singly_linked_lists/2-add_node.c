@@ -18,22 +18,15 @@ exit(1);
 if (head == (void *) 0)
 exit(1);
 
-if (*head == (void *) 0)
-exit(1);
-
 h->str = strdup(str);
 h->len = strlen(str);
-if ((*head)->next == (void *) 0) 
-{
-(*head)->next = h;
+
+if (*head == (void *) 0) 
 h->next = (void *) 0;
-}
 else
-{
 h->next = (*head)->next;
-(*head)->next = h;
-h->next = (void *) 0;
-}
+
+*head = h;
 
 return (h);
 }

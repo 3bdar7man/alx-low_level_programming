@@ -8,19 +8,20 @@
  */
 void free_list(list_t *head)
 {
-if (head == (void *) 0)
-exit(1);
+if (head  == (void *) 0)
+goto done;
 
 if (head->next == (void *) 0)
 {
-free(head->str);
 free(head);
+goto done;
 }
 else
 {
 free_list(head->next);
 }
 
-free(head->str);
 free(head);
+
+done:
 }
