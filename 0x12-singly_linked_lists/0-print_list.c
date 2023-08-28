@@ -16,7 +16,7 @@ char *str;
 
 if (h == (void *) 0)
 {
-printf("[0] (nil)");
+printf("[0] (nil)\n");
 return (0);
 }
 
@@ -24,7 +24,7 @@ while (h)
 {
 n++;
 str = strdup(h->str);
-printf("[%d] %c%s%c", h->len, '"', str, '"');
+printf("[%d] %c%s%c\n", h->len, '"', str, '"');
 h = h->next;
 }
 
