@@ -12,12 +12,18 @@ if (head == (void *) 0)
 goto done;
 
 if (head->next == (void *) 0)
+{
+head = NULL;
 goto done;
+}
 else
+{
 free_listint(head->next);
+}
 
 free(head->next);
 head->next = NULL;
+head = NULL;
 
 done:
 }

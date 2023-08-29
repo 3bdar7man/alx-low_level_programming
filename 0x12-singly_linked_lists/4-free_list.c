@@ -13,7 +13,7 @@ goto done;
 
 if (head->next == (void *) 0)
 {
-free(head);
+head = NULL;
 goto done;
 }
 else
@@ -21,7 +21,8 @@ else
 free_list(head->next);
 }
 
-free(head);
+free(head->next);
+head = NULL;
 
 done:
 }
