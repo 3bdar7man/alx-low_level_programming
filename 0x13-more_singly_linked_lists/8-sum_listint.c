@@ -10,15 +10,18 @@
 int sum_listint(listint_t *head)
 {
 int sum = 0;
+listint_t *Ltmp = malloc(sizeof(listint_t));
 
-if (head == (void *) 0)
+if ((head == (void *) 0) || (Ltmp == (void *) 0))
 return (0);
 
 sum += head->n;
-while (head->next)
+while (!(Ltmp->n))
+Ltmp = head;
+while (Ltmp->next)
 {
-head = head->next;
-sum += head->n;
+Ltmp = Ltmp->next;
+sum += Ltmp->n;
 }
 
 return (sum);

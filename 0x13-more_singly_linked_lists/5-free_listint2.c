@@ -3,27 +3,27 @@
 #include <string.h>
 
 /**
- * free_listint - some func
+ * free_listint2 - some func
  * @head: some arg
  */
-void free_listint(listint_t *head)
+void free_listint2(listint_t **head)
 {
 if (head == (void *) 0)
-goto done;
+return;
 
-if (head->next == (void *) 0)
+if ((*head)->next == (void *) 0)
 {
+(*head) = NULL;
 head = NULL;
-goto done;
+return;
 }
 else
 {
-free_listint(head->next);
+free_listint2(&((*head)->next));
 }
 
-free(head->next);
-head->next = NULL;
+free((*head)->next);
+(*head)->next = NULL;
+(*head) = NULL;
 head = NULL;
-
-done:
 }

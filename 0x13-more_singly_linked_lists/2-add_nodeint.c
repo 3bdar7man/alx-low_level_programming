@@ -11,28 +11,26 @@
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-list_t *h = malloc(sizeof(listint_t) * 1);
-if (h == (void *) 0)
-exit(1);
+listint_t *nodeint = malloc(sizeof(listint_t));
 
-if (head == (void *) 0)
+if ((head == (void *) 0) || (nodeint == (void *) 0))
 return (NULL);
 
-goto init_head;
-assign_head:
+goto init_nodeint;
+assign_nodeint:
 
-if (*head != (void *) 0)
-h->next = *head;
+/* if (*head != (void *) 0) */
+nodeint->next = *head;
 
-*head = h;
+head = &nodeint;
 
 goto done;
-init_head:
+init_nodeint:
 
-h->n = n;
+nodeint->n = n;
 
-assign_head:
+goto assign_nodeint;
 done:
 
-return (h);
+return (nodeint);
 }

@@ -3,13 +3,12 @@
 #include <string.h>
 
 /**
- * add_nodeint_end - some func
+ * reverse_listint - some func
  * @head: some arg
- * @n: some arg
  *
  * Return: the wanted value
  */
-listint_t *add_nodeint_end(listint_t **head, const int n)
+listint_t *reverse_listint(listint_t **head)
 {
 listint_t *nodeint = malloc(sizeof(listint_t));
 listint_t *Ltmp = malloc(sizeof(listint_t));
@@ -17,13 +16,34 @@ listint_t *Ltmp = malloc(sizeof(listint_t));
 if ((head == (void *) 0) || (nodeint == (void *) 0) || (Ltmp == (void *) 0))
 return (NULL);
 
-nodeint->n = n;
+nodeint = *head;
+if ((*head)->next)
+{
+Ltmp = (*head)->next;
+head = &Ltmp;
+}
+else
+{
+head = NULL;
+return (nodeint);
+}
 
-Ltmp = (*head);
 while (Ltmp->next)
+{
+ret = reverse_listint(head);
+if (nodeint == Ltmp)
+return (*head);
+if (!head)
+{
+ret->next = nodeint;
+}
+Ltmp->next = nodeint;
 Ltmp = Ltmp->next;
 
-Ltmp->next = nodeint;
+}
 
-return (nodeint);
+if(!(nodeint->next))
+return (next);
+else
+return (*head);
 }

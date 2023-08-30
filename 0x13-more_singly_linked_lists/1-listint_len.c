@@ -9,16 +9,16 @@
  */
 size_t listint_len(const listint_t *h)
 {
-size_t n = 0;
+size_t sz = 0;
 
 if (h == (void *) 0)
 return (0);
 
 while (h)
 {
-n++;
+sz++;
 h = h->next;
 }
 
-return (n);
+return (sz);
 }

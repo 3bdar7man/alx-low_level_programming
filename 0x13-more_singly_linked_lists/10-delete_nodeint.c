@@ -11,16 +11,21 @@
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 int n, i = 0;
-listint_t;
+listint_t *nodeint_deleted = malloc(sizeof(listint_t));
+listint_t *Ltmp = malloc(sizeof(listint_t));
 
+if ((head == (void *) 0) || (nodeint_deleted == (void *) 0) || (Ltmp == (void *) 0))
+return (0);
+
+Ltmp = *head;
 if (index == 0)
 goto here_delete_nodeint;
 
-while ((*head)->next)
+while (Ltmp->next)
 {
 if (++i == index)
 goto here_delete_nodeint;
-(*head) = (*head)->next;
+Ltmp = Ltmp->next;
 }
 
 /* if ((head == (void *) 0) || ((*head) == (void *) 0) || (i < index)) */
@@ -31,35 +36,30 @@ here_delete_nodeint:
 if (index == 0)
 n = (*head)->n;
 else
-n = (*head)->next->n;
+n = Ltmp->next->n;
 
 if (index > 0)
 {
-nodeint_delete = (*head)->next;
+nodeint_deleted = Ltmp->next;
 }
 else
 {
-nodeint_delete = (*head);
-head = (*head)->next;
+nodeint_deleted = *head;
+Ltmp = (*head)->next;
+head = &Ltmp;
 goto here_clean;
 }
 
-if ((*head)->next)
-{
-(*head)->next = (*head)->next->next;
-}
-else
-{
-free((*head)->next);
-(*head)->next = NULL;
-}
+/* really index > 0 */
+if (Ltmp->next)
+Ltmp->next = nodeint_deleted->next;
 
 here_clean:
 
-free(nodeint_delete->next);
-nodeint_delete->next = NULL;
-free(nodeint_delete);
-nodeint_delete = NULL;
+free(nodeint_deleted->next);
+nodeint_deleted->next = NULL;
+free(nodeint_deleted);
+nodeint_deleted = NULL;
 
 return(n);
 }

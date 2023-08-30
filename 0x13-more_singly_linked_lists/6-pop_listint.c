@@ -10,27 +10,28 @@
 int pop_listint(listint_t **head)
 {
 int n;
-listint_t *h = malloc(sizeof(listint_t) * 1);
-if (h == (void *) 0)
-exit(1);
+listint_t *Ltmp = malloc(sizeof(listint_t));
 
-if (head == NULL || *head == NULL)
+if ((head == (void *) 0) || (Ltmp == (void *) 0))
 return (0);
 
 n = (*head)->n;
 if ((*head)->next == NULL)
 {
-free(h);
-h = NULL;
-head = &h;
-return (0);
+free(*head);
+*head = NULL;
+return (n);
 }
 
-h->n = (*head)->nexn->n;
-h->next = (*head)->next->next;
+Ltmp->n = (*head)->nexn->n;
+Ltmp->next = (*head)->next->next;
+
 free((*head)->next);
 (*head)->next = NULL;
-head = &h;
+free(*head);
+*head = NULL;
+
+head = &Ltmp;
 
 return (n);
 }
