@@ -9,11 +9,15 @@
 void free_list(list_t *head)
 {
 if (head  == (void *) 0)
+{
 goto done;
+}
 
 if (head->next == (void *) 0)
 {
-head = NULL;
+free(head->next);
+head->str = NULL;
+head->next = NULL;
 goto done;
 }
 else
@@ -21,7 +25,6 @@ else
 free_list(head->next);
 }
 
-free(head->next);
 head = NULL;
 
 done:

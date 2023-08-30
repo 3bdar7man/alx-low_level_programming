@@ -50,7 +50,7 @@ nodeint->next = (*head)->next;
 else
 {
 nodeint->next = *head;
-head = &nodeint
+head = &nodeint;
 }
 return(nodeint);
 }

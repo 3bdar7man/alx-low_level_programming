@@ -21,7 +21,7 @@ exit(1);
 h->str = strdup(str);
 h->len = strlen(str);
 
-if (*head == (void *) 0) 
+if (*head == (void *) 0)
 h->next = (void *) 0;
 else
 h->next = (*head)->next;

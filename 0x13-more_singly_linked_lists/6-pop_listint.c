@@ -23,7 +23,7 @@ free(*head);
 return (n);
 }
 
-Ltmp->n = (*head)->nexn->n;
+Ltmp->n = (*head)->next->n;
 Ltmp->next = (*head)->next->next;
 
 free((*head)->next);
